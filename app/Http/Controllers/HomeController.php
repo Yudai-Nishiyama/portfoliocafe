@@ -24,27 +24,6 @@ class HomeController extends Controller
     public function index()
     {
         $user = auth()->user();
-        return view('home', [
-            'intent' => $user->createSetupIntent() //to pause the intent
-        ]);
-    }
-
-    public function test()
-    {
-        return view('test');
-    }
-
-    public function singleCharge(Request $request){
-        $amount = $request->amount;
-        $paymentMethod = $request->payment_method;
-
-        $user = auth()->user();
-        $user->createOrGetStripeCustomer();
-
-        $paymentMethod = $user->addPaymentMethod($paymentMethod);
-
-        $user->charge($amount, $paymentMethod->id);
-
         return view('home');
     }
 }

@@ -20,12 +20,6 @@
         var stripeKey = "{{ env('STRIPE_KEY') }}";
     </script>
 
-    {{-- <style>
-        *{
-            border:1px orangered solid; 
-        }
-    </style> --}}
-
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>

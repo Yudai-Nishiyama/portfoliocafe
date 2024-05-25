@@ -261,33 +261,6 @@
                     </div>
                 </form>
             </div>
-            {{--stripe form  --}}
-            <div class="container">
-                <form action="{{route('single.charge')}}" method="POST" id="subscribe-form">
-                    <input type="number" name="amount" id="amount" class="form-control"><br>
-                    <label for="card-holder-name form-control">Card Holder Name</label>
-                    <input id="card-holder-name" type="text" class="w-50 border" placeholder="Your Name">
-                    @csrf
-                    <div class="form-row">
-                        <label for="card-element">Credit or debit card</label>
-                        <div id="card-element" class="form-control">
-                        </div>
-                        <!-- Used to display form errors. -->
-                        <div id="card-errors" role="alert"></div>
-                    </div>
-                    <div class="stripe-errors"></div>
-                    @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                        @foreach ($errors->all() as $error)
-                        {{ $error }}<br>
-                        @endforeach
-                    </div>
-                    @endif
-                    <div class="form-group text-center">
-                        <button  id="card-button" data-secret="{{ $intent->client_secret }}" class="btn btn-lg btn-success btn-block">SUBMIT</button>
-                    </div>
-                </form> 
-            </div>
 
             <footer>
                 <div class="footer-content">
