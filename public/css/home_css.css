@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Raleway:wght@400;500;700&display=swap');
+
+/* note color  */
+/* white: #fff  ,milk coffee: #c7a17a    , 
+coffee:#96746b , dark color:#312a26, cream:#f2f2f2 
+bottom social bar color: #19100F */
+*{ 
+    margin:0; /*most of the brower in default they have margin, in this web we dont want margin so we set 0*/
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Oswald', sans-serif;
+}
+
+p{
+    font-family: 'Raleway', sans-serif;
+}
+
+nav{
+    width:85%;
+    margin:1em auto;
+    overflow: auto;
+}
+
+nav h1{
+    text-transform: uppercase;
+    float:left;
+    width:50%;
+}
+
+nav h1 a {
+    font-family: 'Oswald', sans-serif;
+    color: #96746b;
+    text-decoration:none;
+}
+
+.navbar-nav{
+    width:50%;
+    float:left;
+    text-align: right;
+    padding-top: 1em;
+}
+
+.navbar-nav li{
+    display: inline-block;
+    margin-left:1em;
+    transition: background-color 0.5s;
+}
+.navbar-nav li:hover{
+    background-color: white;
+    opacity:0.3 ;
+}
+
+
+.navbar-nav li a{
+    text-decoration: none;
+    font-family:  'Raleway', sans-serif;
+    color: #312a26;
+    font-weight: 700;
+}
+
+#banner{
+    width:100%;
+    height:670px;
+    background-image: url("/images/banner-bg.jpg");
+    background-size:cover;
+    background-position: center center;
+    transition: background-image 0.5s ease;
+}
+
+#banner-text{
+    overflow: hidden;
+    width:100%;
+    position: relative;
+    top: 5%;
+    left: 7.5%;
+    width: 90%;
+}
+
+#banner-text h2 {
+    font-size: 4em;
+    color:#c7a17a ;
+    text-transform: uppercase;
+}
+
+#banner-text h2 span{
+    color:#96746b;
+}
+
+#banner-text p{
+    color: #fff;
+}
+
+#banner-text h2,
+#banner-text p,
+#banner-text a{
+    opacity: 0; 
+    transform: translateX(-50px); 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+#banner-text.show h2,
+#banner-text.show p,
+#banner-text.show a{
+    opacity: 1; 
+    transform: translateX(0);
+}
+
+#banner a{
+    display: inline-block;
+    padding:1em;
+    color:#fff;
+    background-color: #312a26;
+    font-family:  'Raleway', sans-serif;
+    text-decoration: none;
+    margin-top: 1em;
+    font-weight: 700;
+}
+
+#banner a:hover{
+    background-color: #4f443e;
+    opacity:0.5;
+}
+
+#banner-button {
+    position: relative;
+    top:50%;
+    left:45%;
+    width: 45%;
+        display: flex;
+}
+
+@media screen and (min-width: 375px) {
+    #banner-text{
+        overflow: hidden;
+        width:100%;
+        position: relative;
+        top: 5%;
+        left: 7.5%;
+        width: 90%;
+    }
+    
+    #banner-button{
+        overflow: hidden;
+        width:100%;
+        position: relative;
+        top:50%;
+        left:45%;
+        width: 45%;
+         display: flex;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #banner-text{
+        position: relative;
+        top: 50%;
+        left: 7.5%;
+        width: 90%;
+    }
+    
+    #banner-button{
+        position: relative;
+        top:65%;
+        left:50%;
+        width: 45%;
+         display: flex;
+    }
+}
+
+#banner-button li{
+    margin-right: 10px; /* 各項目の間に隙間を作る */
+}
+
+#banner-button li::marker {
+  color: black;
+  cursor: pointer;
+  
+}
+#banner-button li.marker-clicked::marker {
+  color: white;
+}
+/* ADS(1) */
+.ads {
+    /* play the image to the center */
+    width: 85%;
+    margin:4em auto;
+    /* overflow:auto; */
+}
+
+.ads-item{
+    float:left;
+    width: 48.5%; /* betwwen picture there is 3% space, 2 picture has 97%of the places, so dived it by2*/
+    height: 350px;
+    margin-bottom: 3%;/* this is for the space between the bottom pictures */
+    background-size:cover;
+    background-position: center center;
+    position: relative;
+
+}
+
+#ads-item1{
+    margin-right:3%;
+    background-image: url("/images/ads-img1.jpg");
+}
+
+#ads-item2{
+    background-image: url("/images/ads-img2.jpg");
+}
+
+.ads-item{
+    opacity: 0; /* 最初は透明にしておく */
+    transform: translateX(-50px); /* 左から50pxずつスライドさせる */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* アニメーションの設定 */
+}
+
+.ads-item.show{
+    opacity: 1; /* 表示するときに不透明にする */
+    transform: translateX(0); /* 表示するときに元の位置に戻す */
+}
+.ads-item h3{
+    color: #fff;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 5px #312a26;
+    line-height: 120%;
+}
+
+.ads-item a{
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 4px #312a26;
+    display: block;
+    margin-top: 1em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.ads-text{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+    left: 10%;
+}
+
+
+/* MERCH*/
+.merch {
+    width: 85%;
+    margin: 4em auto;
+}
+
+.section-header{
+    text-align:center;
+}
+.section-header span{
+    color: #96746b;
+    font-style: italic;
+    font-weight: 500;
+    font-family:'Raleway', sans-serif;
+}
+
+.section-header h2{
+    color: #312a26;
+    text-transform: uppercase;
+}
+
+.section-header hr{
+    height: 2px;
+    background-color: #c7a17a;
+    margin: auto;
+    width: 25%;
+}
+
+
+/* discount */
+.discount{
+    width: 85%;
+    height: 350px;
+    margin:4em auto;
+    background-image: url("/images/discount-img.jpg");
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.discount-text {
+    color: #fff;
+    text-align: center;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.discount-text span{
+    font-style:italic;
+    font-weight:500;
+    text-shadow:3px 3px 4px #312a26;
+    font-family:'Raleway', sans-serif;
+}
+
+.discount-text h3{
+    text-transform: uppercase;
+    font-size: 2em;
+    text-shadow:3px 3px 5px #312a26;
+}
+
+.discount-text a{
+    font-family:'Raleway', sans-serif;
+    color: #312a26;
+    display: inline-block;
+    padding: 1em;
+    margin-top: 1em;
+    background-color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.discount-text a:hover{
+    opacity: 0.5;
+}
+
+/* sale */
+.sale{
+    width: 85%;
+    margin: 4em auto;
+}
+
+.sale-header{
+    text-align: center;
+}
+
+.sale-header span{
+    font-style: italic;
+    font-weight: 500;
+    color: #c7a17a;
+    font-family:'Raleway', sans-serif;
+}
+
+.sale-header h3{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.sale-header hr{
+    border: 1px solid #c7a17a;
+    height: 2px;
+    background-color: #c7a17a;
+    margin: auto;
+    width: 25%;
+}
+
+
+/* ADS(2) */
+#ads-item3{
+    background-image: url("/images/ads-img3.jpg");
+}
+
+/* ADS(2) */
+#ads-item4{
+    background-image: url("/images/ads-img4.jpg");
+}
+
+/* ADS(2) */
+#ads-item5{
+    
+    background-image: url("/images/ads-img5.jpg");
+}
+
+/* ADS(2) */
+#ads-item6{
+    background-image: url("/images/ads-img6.jpg");
+}
+
+/* RESERVATION */
+.reservation{
+    width:85%;
+    margin:4em auto;
+}
+
+.reservation form{
+    overflow: auto;
+    padding-top: 2em;
+
+}
+
+.form-group{
+    /* float: left; */
+    /* width: 48%; */
+    height: 650px;
+    background-color: #f2f2f2;
+    /* padding: 2em; */
+}
+
+.form-group:nth-child(1){
+    /* margin-right: 2%; */
+}
+
+select,input,textarea{
+    display: block; /* those were inline in default*/
+    font-family:'Raleway', sans-serif;
+    padding: 1em;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+.reserve-time input, .reserve-time label,
+.reserve-agree input, .reserve-agree label {
+    display: inline-block; /*this make the element lineup horizontally*/
+    width: auto;
+}
+
+.reserve-time{
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    font-family:'Raleway', sans-serif;
+    margin-bottom: 0.5em;
+    display: inline-block;
+}
+
+.reservation p, .reservation h3 {
+    text-align: center;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.reservation h3 {
+    text-transform: uppercase;
+}
+
+.reservation h3::after{ /*this merid is view cannot access to the image, if you use "::after"*/
+    content:"";
+    width:150px;
+    height: 30px;
+    background-image: url("/images/reservation-cards.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    margin:auto;
+}
+
+input[type="submit"]{ /*affect inputs with this attribute*/
+    display: inline-block;
+    background-color: #c7a17a;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* footer */
+
+footer{
+    width:100%;
+    padding:2em 0;
+    background-image: url("/images/footer-img.jpg");
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+}
+
+.footer-content{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.footer-column h3 {
+    text-transform: uppercase;
+    margin: 1em 0;
+}
+
+.footer-column p{
+    color: #c7a17a;
+    margin-bottom: 1em;
+}
+
+.footer-column h4{
+    margin-top:1em
+}
+
+footer td, footer th {
+    font-family:'Raleway', sans-serif;
+}
+
+footer input{
+    width: auto;
+}
+
+/* FOOTER - SOCIAL */
+.footer-social{
+    width: 100%;
+    padding:1em 7.5%;
+    overflow: auto;
+    color:#fff;
+    background-color: #19100F;
+}
+.social-column{
+    float: left;
+    width: 33%;
+    text-align: center;
+}
+.social-column img{
+    height: 1.5em ;
+}
+
+.social-column h3{
+    text-transform: uppercase;
+}
+
+/* for stripe payment form */
+    .StripeElement {
+        background-color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        box-shadow: 0 1px 3px 0 #e6ebf1;
+        -webkit-transition: box-shadow 150ms ease;
+        transition: box-shadow 150ms ease;
+    }
+    .StripeElement--focus {
+        box-shadow: 0 1px 3px 0 #cfd7df;
+    }
+    .StripeElement--invalid {
+        border-color: #fa755a;
+    }
+    .StripeElement--webkit-autofill {
+        background-color: #fefde5 !important;
+    }
+
